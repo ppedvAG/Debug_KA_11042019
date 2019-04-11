@@ -1,0 +1,19 @@
+﻿<Window x:Class="HalloAsync.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloAsync"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="300">
+    <StackPanel Margin="12">
+        <Button Click="StartOhneThread" IsEnabled="False">Start ohne Threads</Button>
+        <Button Click="StartTask">Start Task (Dispatcher)</Button>
+        <Button Click="StartTaskTS">Start Task (TaskScheduler)</Button>
+        <Button Click="StartTaskAAW">Start Task async/await</Button>
+
+        <ProgressBar Name="pb" Height="22"/>
+        <Slider Maximum="100" Value="{Binding ElementName=pb,Path=Value}"/>
+        <Button Click="StartDB" Content="Start Task async/await"/>
+    </StackPanel>
+</Window>
